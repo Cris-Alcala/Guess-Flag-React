@@ -26,7 +26,7 @@ const FlagsGame = () => {
       : null;
   }, [flagsGame]);
   const restartGame = () => {
-    setGame({ ...game, timer: { minutes: 0, seconds: 30 }, wins: 0 });
+    setGame({ ...game, timer: { minutes: 5, seconds: 0 }, wins: 0 });
     clearInterval(interval.current);
     fetch(flags_code_url)
       .then((response) => response.json())
