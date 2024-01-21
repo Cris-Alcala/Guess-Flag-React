@@ -1,0 +1,194 @@
+* {
+  min-width: 0;
+  font: inherit;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: rgb(21, 21, 21);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  & footer {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    font-weight: bold;
+    box-shadow: -1px -5px 10px 1px rgba(255, 106, 0, 0.595);
+    border-radius: 0.5em 0.5em 0 0;
+  }
+}
+.navBar {
+  text-align: center;
+  color: white;
+  & h1 {
+    font-weight: bold;
+    font-size: 3em;
+  }
+  & h2 {
+    font-weight: bold;
+  }
+}
+.mainGame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 65dvh;
+  color: white;
+  margin-top: 5em;
+  & .game {
+    min-width: 800px;
+    max-width: 800px;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    & button {
+      min-width: 250px;
+      max-width: 250px;
+      padding: 0.5em;
+      outline: none;
+      transition: all 300ms;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      border-radius: 0.5em;
+      border: 3px solid rgb(255, 106, 0);
+    }
+    & button:hover {
+      color: white;
+      background-color: rgb(255, 106, 0);
+      box-shadow: 1px 1px 10px 1px rgba(255, 106, 0, 0.682);
+    }
+    & input {
+      min-width: 250px;
+      max-width: 250px;
+      outline: none;
+      border-radius: 0.5em;
+      transition: all 400ms;
+      padding: 0.5em;
+      font-weight: bold;
+      border: 5px double gray;
+    }
+    & input:focus {
+      border: 5px double rgb(255, 106, 0);
+    }
+    & .inputs {
+      display: flex;
+      flex-direction: row;
+      place-items: center;
+      padding: 1em;
+      gap: 10em;
+      & .game-space {
+        max-width: 250px;
+        & p {
+          color: rgba(255, 255, 255, 0.622);
+          padding: 0.5em;
+          text-align: justify;
+        }
+      }
+      & .flag-info {
+        & img {
+          border-radius: 0.5em;
+          border: 3px solid white;
+          box-shadow: 1px 1px 5px 1px white;
+        }
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    & .stats {
+      text-align: center;
+      font-weight: bold;
+      & input {
+        margin-top: 1em;
+      }
+    }
+  }
+  & .ranking {
+    min-width: 500px;
+    max-width: 500px;
+    text-align: center;
+    & .ranking-table {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      gap: 2em;
+      padding: 1em;
+      & h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      & table {
+        border-collapse: collapse;
+        & td,
+        th {
+          padding: 1em;
+          min-width: 150px;
+          max-width: 150px;
+          border: 1px solid gray;
+        }
+        & th {
+          background-color: rgb(255, 106, 0);
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .navBar {
+    width: 170%;
+    margin-top: 2em;
+  }
+  .mainGame {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 170%;
+    overflow: hidden;
+  }
+  .game {
+    display: flex;
+    flex-direction: row;
+    width: 10px;
+  }
+  footer {
+    width: 170%;
+    margin-top: 3em;
+  }
+}
